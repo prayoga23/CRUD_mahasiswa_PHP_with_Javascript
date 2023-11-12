@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Mahasiswa</title>
+</head>
+<body>
+<h2>Data Mahasiswa</h2>
+<table width="500px" border="1">
+  <tbody>
+    <tr>
+      <td>NIM</td>
+      <td>Nama</td>
+      <td>Tgl</td>
+      <td>Jenis Kelamin</td>
+      <td>Kelola</td>
+    </tr>
+    <tr>
+      <td>4220012</td>
+      <td>Citra</td>
+      <td>2016-06-09</td>
+      <td>Perempuan</td>
+      <td><input type="button" value="Edit">
+ <input type="button" value="Delete"></td>
+    </tr>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Form Data Mahasiswa</h2>
+
+<form action="">
+ <label for="nim">NIM:</label>
+ <input type="text" id="nim" name="nim"><br>
+ <label for="nama">Nama:</label>
+ <input type="text" id="nama" name="nama"><br>
+ <label for="dob">Tgl Lahir:</label>
+ <input type="date" id="dob" name="dob"><br>
+ <label for="jk">Jenis Kelamin:</label>
+ <select id="jk" name="jk">
+    <option value="laki-laki">Laki-Laki</option>
+    <option value="perempuan">Perempuan</option>
+ </select><br>
+ <input type="submit" value="Simpan">
+</form>
+
+</body>
+</html>
