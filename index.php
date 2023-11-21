@@ -14,12 +14,12 @@
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) > 0) {
-        echo '<table width="500px" border="1">
+        echo '<table width="600px" border="1">
                 <tbody>
                     <tr>
                         <td>NIM</td>
                         <td>Nama</td>
-                        <td>Tgl</td>
+                        <td>Tgl Lahir</td>
                         <td>Jenis Kelamin</td>
                         <td>Kelola</td>
                     </tr>';
@@ -58,7 +58,37 @@
             <option value="Laki-Laki">Laki-Laki</option>
             <option value="Perempuan">Perempuan</option>
         </select><br>
+        <label for="jurusan">Jurusan:</label>
+        <select id="jurusan" name="jurusan" required>
+            <option value="Computer Science">Computer Science</option>
+            <option value="Public Relation">Public Relation</option>
+            <option value="Teknik Mesin">Teknik Mesin</option>
+            <!-- Tambahkan jurusan lainnya disini -->
+        </select><br>
+        <label for="profile">My Profile:</label>
+        <br>
+        <textarea id="profile" name="profile" rows="4" cols="50"></textarea>
+        <br>
+        <input type="submit" name="generate" value="Generate">
         <input type="submit" name="submit" value="Simpan">
     </form>
+  
+    <script>
+        function generate() {
+            const nim = document.getElementById('nim').value;
+            const nama = document.getElementById('nama').value;
+            const jurusan = document.getElementById('jurusan').value;
+
+            const profileText = 'Nama: ' + nama + '\nJurusan: ' + jurusan + '\nNIM: ' + nim;
+
+            document.getElementById('profile').value = profileText;
+        }
+
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            generate();
+        });
+    </script>
 </body>
 </html>
+
